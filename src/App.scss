@@ -1,0 +1,51 @@
+body {
+  color: #363636;
+  background-color: #fff;
+}
+
+.app-header {
+  h2 {
+    margin: 0;
+    font-size: 30px;
+  }
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #363636;
+  font-size: calc(10px + 2vmin);
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-list {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #ddd;
+  margin-right: 1rem;
+  border-radius: 5px;
+  > p {
+    margin: 0;
+  }
+}
+
+.transaction-list {
+  display: flex;
+  flex-grow: 1;
+}
+
+.data-grid {
+  height: 800px;
+  width: 100%;
+}
