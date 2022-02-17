@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormControlLabel, Checkbox } from '@mui/material';
-import styles from './transactionTypes.module.scss';
+import {FormControlLabel, Checkbox} from '@mui/material';
 
 const TransactionTypes = ({typeFilters, handleTypeFiltersChange}) => {
 

@@ -1,10 +1,16 @@
-import { DataGrid } from '@mui/x-data-grid';
-import jsonData from '../../data/data.json';
+import React from 'react';
+import {Link} from 'react-router-dom';
+import {DataGrid} from '@mui/x-data-grid';
 
-const TransactionList = ({nameFilters, typeFilters}) => {
+const TransactionList = ({nameFilters, typeFilters, jsonData}) => {
+
+	const [pageSize, setPageSize] = React.useState(12);
 
 	const columns = [{
 		field: 'account',
+		renderCell: cellValues => {
+			return <Link to={{pathname: `/detail/${cellValues.row.account}`}}>{cellValues.row.account}</Link>;
+		},
 		headerName: 'ACCOUNT NO',
 		width: 150,
 	},
@@ -28,8 +34,8 @@ const TransactionList = ({nameFilters, typeFilters}) => {
 		headerName: 'TRANSACTION TYPE',
 		width: 200,
 	}];
-	
-	let filteredData = jsonData.transactions;
+
+	let filteredData = jsonData;
 	filteredData = nameFilters.length ? filteredData.filter(d => nameFilters.includes(d.accountName)) : filteredData;
 	filteredData = typeFilters.length ? filteredData.filter(d => typeFilters.includes(d.transactionType)) : filteredData;
 
@@ -39,7 +45,10 @@ const TransactionList = ({nameFilters, typeFilters}) => {
 		        columns={columns}
 		        getRowId={(row) => row.iban}
 		        rows={filteredData}
-		        pageSize={12}
+		        pageSize={pageSize}
+		        disableSelectionOnClick
+		        onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+		        rowsPerPageOptions={[12, 24, 36]}
 		    />
 		</section>
 

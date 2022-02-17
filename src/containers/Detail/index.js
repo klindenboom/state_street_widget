@@ -1,15 +1,14 @@
 import TransactionDetail from '../../components/TransactionDetail';
 
-const Detail = () =>{
-  return (
-    <div>
-      <main className="app-detail">
-        <section className="details-panel">
-          <TransactionDetail />
-        </section>
-      </main>
-    </div>
-  );
+const Detail = ({jsonData}) => {
+
+	return (
+		<div>
+			<section className="app-detail">
+				<TransactionDetail jsonData={jsonData} />
+			</section>
+		</div>
+	);
 }
 
 export default Detail;

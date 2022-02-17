@@ -1,5 +1,4 @@
 import { FormControlLabel, Checkbox } from '@mui/material';
-import styles from './accountNames.module.scss';
 
 const AccountNames = ({nameFilters, handleNameFiltersChange}) => {
 
@@ -14,9 +13,7 @@ const AccountNames = ({nameFilters, handleNameFiltersChange}) => {
 			<FormControlLabel control={<Checkbox checked={nameFilters.includes("Personal Loan Account")} onChange={() => handleNameFiltersChange("Personal Loan Account")} />} label="Personal Loan Account" />
 			<FormControlLabel control={<Checkbox checked={nameFilters.includes("Money Market Account")} onChange={() => handleNameFiltersChange("Money Market Account")} />} label="Money Market Account" />
 			<FormControlLabel control={<Checkbox checked={nameFilters.includes("Home Loand Account")} onChange={() => handleNameFiltersChange("Home Loand Account")} />} label="Home Loand Account" />
-
 		</section>
-
 	);
 };
 
