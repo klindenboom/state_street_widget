@@ -1,4 +1,4 @@
-import { FormControlLabel, Checkbox } from '@mui/material';
+import {FormControlLabel, Checkbox} from '@mui/material';
 
 const AccountNames = ({nameFilters, handleNameFiltersChange}) => {
 
